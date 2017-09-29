@@ -4461,3 +4461,1775 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-09-29 21:53:14 +0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 213ms (Views: 205.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-29 21:53:22 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (358.3ms)
+Completed 200 OK in 412ms (Views: 395.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 22:06:17 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 22:08:06 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 22:10:33 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:12:06 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/pages/about.html.erb:7: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/pages/about.html.erb:7: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:12:50 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:12:53 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:12:54 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:12:55 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-29 22:12:55 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:12:57 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-29 22:12:57 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:12:59 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-29 22:13:00 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:13:01 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 127.0.0.1 at 2017-09-29 22:13:04 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-29 22:13:04 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:13:05 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-09-29 22:13:07 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 127.0.0.1 at 2017-09-29 22:13:08 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-29 22:13:09 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:13:09 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-29 22:13:14 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-09-29 22:21:09 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 35.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 22:59:14 +0700
+  
+SyntaxError (/home/van/lab01-1312801/config/routes.rb:4: syntax error, unexpected ':', expecting =>
+', to: 'session#create,', as : nil
+                              ^):
+  
+config/routes.rb:4: syntax error, unexpected ':', expecting =>
+Started GET "/" for 127.0.0.1 at 2017-09-29 22:59:31 +0700
+  
+SyntaxError (/home/van/lab01-1312801/config/routes.rb:4: syntax error, unexpected ':', expecting =>
+n', to: 'session#create', as : nil
+                              ^):
+  
+config/routes.rb:4: syntax error, unexpected ':', expecting =>
+Started GET "/" for 127.0.0.1 at 2017-09-29 22:59:41 +0700
+  
+NameError (undefined local variable or method `login' for #<ActionDispatch::Routing::Mapper:0x007f3899c6b7d0>):
+  
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:04:37 +0700
+  
+NameError (undefined local variable or method `login' for #<ActionDispatch::Routing::Mapper:0x007f389acd3578>):
+  
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/about" for 127.0.0.1 at 2017-09-29 23:04:40 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/about" for 127.0.0.1 at 2017-09-29 23:05:11 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:05:17 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:05:26 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:06:08 +0700
+  
+NameError (undefined local variable or method `login' for #<ActionDispatch::Routing::Mapper:0x007f38900ae810>):
+  
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:06:20 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:13:10 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-29 23:13:11 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 55ms (Views: 40.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-29 23:14:02 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 51ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-29 23:14:05 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 46ms (Views: 40.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:14:09 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:14:57 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/layouts/application.html.erb:33: syntax error, unexpected '='
+_to "Login",login_path,class ="nav_link" 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:62: syntax error, unexpected keyword_do_block, expecting keyword_end
+reeze;           flash.each do |message_type, message| 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:62: syntax error, unexpected '|', expecting '='
+ach do |message_type, message| 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/layouts/application.html.erb:33: syntax error, unexpected '='
+app/views/layouts/application.html.erb:62: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/layouts/application.html.erb:62: syntax error, unexpected '|', expecting '='
+app/views/layouts/application.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:15:05 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/layouts/application.html.erb:33: syntax error, unexpected '='
+_to "Login",login_path,class ="nav_link" 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:62: syntax error, unexpected keyword_do_block, expecting keyword_end
+reeze;           flash.each do |message_type, message| 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:62: syntax error, unexpected '|', expecting '='
+ach do |message_type, message| 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/layouts/application.html.erb:33: syntax error, unexpected '='
+app/views/layouts/application.html.erb:62: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/layouts/application.html.erb:62: syntax error, unexpected '|', expecting '='
+app/views/layouts/application.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:15:14 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/layouts/application.html.erb:33: syntax error, unexpected '='
+_to "Login",login_path,class ="nav_link" );@output_buffer.sa
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:62: syntax error, unexpected keyword_do_block, expecting keyword_end
+reeze;           flash.each do |message_type, message| 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:62: syntax error, unexpected '|', expecting '='
+ach do |message_type, message| 
+                              ^
+/home/van/lab01-1312801/app/views/layouts/application.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/layouts/application.html.erb:33: syntax error, unexpected '='
+app/views/layouts/application.html.erb:62: syntax error, unexpected keyword_do_block, expecting keyword_end
+app/views/layouts/application.html.erb:62: syntax error, unexpected '|', expecting '='
+app/views/layouts/application.html.erb:73: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:15:44 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:15:46 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940543066580'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:15:56 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:16:46 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:16:47 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940534128460'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:18:00 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940541286240'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:18:03 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940543155840'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:18:12 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940545727180'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:18:13 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_47431253444860'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:19:16 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940535469500'
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:19:24 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:19:26 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940531678600'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:19:59 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (238.7ms)
+Completed 500 Internal Server Error in 241ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url' for #<#<Class:0x007f389a730cd8>:0x007f3899ee2db0>
+Did you mean?  URI):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for url.path(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940538711540'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:20:00 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (293.9ms)
+Completed 500 Internal Server Error in 296ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url' for #<#<Class:0x007f389a730cd8>:0x007f389a08fca8>
+Did you mean?  URI):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for url.path(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940540097320'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:20:01 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (220.4ms)
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `url' for #<#<Class:0x007f389a730cd8>:0x007f3899a2de00>
+Did you mean?  URI):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for url.path(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940536245220'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:20:09 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (306.3ms)
+Completed 500 Internal Server Error in 309ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x007f389a730cd8>:0x007f389005f800>):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for user.path(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940455597900'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:20:16 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (223.4ms)
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users' for #<#<Class:0x007f389a730cd8>:0x007f3899304a20>
+Did you mean?  users_url):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for users.path(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940532490520'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:20:18 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (288.7ms)
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users' for #<#<Class:0x007f389a730cd8>:0x007f3899bdf910>
+Did you mean?  users_url):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for users.path(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940537170300'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:20:25 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (229.5ms)
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users' for #<#<Class:0x007f389a730cd8>:0x007f389a646480>
+Did you mean?  users_url):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for users.url(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940542585740'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:20:25 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (249.7ms)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `users' for #<#<Class:0x007f389a730cd8>:0x007f389c06a280>
+Did you mean?  users_url):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-6 col-md-offset-3">
+    5:     <%= form_for users.url(@user) do |f| %>
+    6:       <%= render 'shared/error_messages' %>
+    7: 
+    8:       <%= f.label :email %>
+  
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940556289640'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:21:22 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (2.0ms)
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if @user.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(@user.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1:in `_app_views_shared__error_messages_html_erb__84579782917023376_69940534651580'
+app/views/sessions/new.html.erb:6:in `block in _app_views_sessions_new_html_erb__322835240184872327_69940534832860'
+app/views/sessions/new.html.erb:5:in `_app_views_sessions_new_html_erb__322835240184872327_69940534832860'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:21:41 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:23:58 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:24:21 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:25:07 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:27:19 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 2767ms (Views: 2765.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:28:27 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2080ms (Views: 2079.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:28:36 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 2104ms (Views: 2103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-09-29 23:29:04 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:30:38 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 2077ms (Views: 2074.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-29 23:30:50 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 2118ms (Views: 2117.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-30 00:01:02 +0700
+  
+SyntaxError (/home/van/lab01-1312801/app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-30 00:01:21 +0700
+  
+SyntaxError (/home/van/lab01-1312801/app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-30 00:01:25 +0700
+  
+SyntaxError (/home/van/lab01-1312801/app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/sessions_controller.rb:14: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-30 00:02:28 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x007f389b481518>:0x007f389b47f1a0>
+Did you mean?  root_path
+               about_path):
+    33:         <a class="nav-link" href="/sessions/login">Login</a>
+    34:       </li>
+    35:       <li>
+    36:        <%= link_to "Log out", logout_path, method: :delete %>
+    37:       </li>
+    38:         </ul>
+    39:       </div>
+  
+app/views/layouts/application.html.erb:36:in `_app_views_layouts_application_html_erb___2125211499892227848_69940550031420'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-30 00:02:54 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 374ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logout_path' for #<#<Class:0x007f389b27b7c8>:0x007f389b279630>
+Did you mean?  root_path
+               about_path):
+    33:         <a class="nav-link" href="/sessions/login">Login</a>
+    34:       </li>
+    35:       <li>
+    36:        <%= link_to "Log out", logout_path, method: :delete %>
+    37:       </li>
+    38:         </ul>
+    39:       </div>
+  
+app/views/layouts/application.html.erb:36:in `_app_views_layouts_application_html_erb___2125211499892227848_69940548937480'
+Started GET "/sessions/login" for 127.0.0.1 at 2017-09-30 00:03:14 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sessions/logout" for 127.0.0.1 at 2017-09-30 00:03:17 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oJMbcdpu7gDKuycXK6MVvqusUjKz00OceXiij8mLLz0blUlnALmuAxmqTiENqzTmzJsENCnS2G+yS275Q6U1GQ=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/sessions/login" for 127.0.0.1 at 2017-09-30 00:03:54 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oJMbcdpu7gDKuycXK6MVvqusUjKz00OceXiij8mLLz0blUlnALmuAxmqTiENqzTmzJsENCnS2G+yS275Q6U1GQ==", "session"=>{"email"=>"long312@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "long312@yahoo.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 134ms (Views: 35.7ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2017-09-30 00:04:02 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XIdTKiGQz/T6or35CwOR4g82VphFEvXQ171SLkjQk7fngQE8+0eP9ymz1M8tC7C6aAEAnt8TbiMcjp5Ywv6Jkw==", "session"=>{"email"=>"long312@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "long312@yahoo.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 127ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions/login" for 127.0.0.1 at 2017-09-30 00:04:15 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"neq5fArgwHDvWM8tvDOw9oqpc5+BdE1Z6TnEcu2q880m7Otq0DeAczxJphuaO5Gu7Z4lmRt11qoiCggEZ4Tp6Q==", "session"=>{"email"=>"long312@yahoo.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "long312@yahoo.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 90ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 00:04:15 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/sessions/logout" for 127.0.0.1 at 2017-09-30 00:04:26 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4EunkLR2cTFTbGENuR0sHIvBQEFVMqCfq8gbwCsRBlNbTfWGbqExMoB9CDufFQ1E7PYWR88zO2xg+9e2oT8cdw=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 12ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sessions/logout" for 127.0.0.1 at 2017-09-30 00:04:28 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4EunkLR2cTFTbGENuR0sHIvBQEFVMqCfq8gbwCsRBlNbTfWGbqExMoB9CDufFQ1E7PYWR88zO2xg+9e2oT8cdw=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 13ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 00:06:56 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 00:07:05 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-30 00:23:15 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2807ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'underscore' with type 'application/javascript'
+Checked in these paths: 
+  /home/van/lab01-1312801/app/assets/config
+  /home/van/lab01-1312801/app/assets/images
+  /home/van/lab01-1312801/app/assets/javascripts
+  /home/van/lab01-1312801/app/assets/stylesheets
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/van/lab01-1312801/node_modules
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/popper_js-1.11.1/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta/assets/stylesheets
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta/assets/javascripts):
+    4:     <title>FastMail</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4201056593742616605_47120521812660'
+Started GET "/" for 127.0.0.1 at 2017-09-30 00:23:18 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'underscore' with type 'application/javascript'
+Checked in these paths: 
+  /home/van/lab01-1312801/app/assets/config
+  /home/van/lab01-1312801/app/assets/images
+  /home/van/lab01-1312801/app/assets/javascripts
+  /home/van/lab01-1312801/app/assets/stylesheets
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/van/lab01-1312801/node_modules
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/popper_js-1.11.1/assets/javascripts
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta/assets/stylesheets
+  /home/van/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-4.0.0.beta/assets/javascripts):
+    4:     <title>FastMail</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/application.js:17
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4201056593742616605_69831168657040'
+Started GET "/" for 127.0.0.1 at 2017-09-30 00:23:48 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4605ms (Views: 4603.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-30 00:23:53 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 65ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:23:55 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 72ms (Views: 70.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:25:28 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:27:31 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:27:40 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:27:48 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 63ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:27:57 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 63ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:04 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:05 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:06 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 74ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:37 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 83ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:43 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 75ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:44 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 70ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:45 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 59ms (Views: 58.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:52 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:29:53 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:30:36 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 67ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:30:38 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:30:38 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 68ms (Views: 67.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:30:39 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:31:03 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:32:42 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 521ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "margin-left": expected ";", was ": 200px;"):
+    4:     <title>FastMail</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/pages.scss:3
+app/assets/stylesheets/application.scss:4
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4201056593742616605_69830834728900'
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:33:01 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 528ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "margin-left": expected ";", was ": auto"):
+    4:     <title>FastMail</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/pages.scss:3
+app/assets/stylesheets/application.scss:4
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__4201056593742616605_69831113055900'
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:33:10 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 2117ms (Views: 2116.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:33:41 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 67ms (Views: 66.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:33:57 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 91ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:34:25 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 90ms (Views: 88.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:34:41 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 65ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:34:47 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 72ms (Views: 70.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:34:55 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:35:15 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:35:17 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:35:18 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:36:19 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 67ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:36:32 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-09-30 00:36:33 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-09-30 00:36:34 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 127.0.0.1 at 2017-09-30 00:36:35 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:36:36 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:37:10 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 60ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:37:11 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-09-30 00:37:12 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 62ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:37:13 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 70ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:37:48 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:39:35 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 58ms (Views: 57.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:40:09 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (273.0ms)
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `location' for #<#<Class:0x007f05ac0a4ae8>:0x007f05a7dfc1c8>
+Did you mean?  localize):
+    4: 
+    5: <h2>Thành viên</h2>
+    6: <p><center> 1312801 Nguyễn Ngọc Đình Văn</center></p>
+    7: <%= image_tag(google_map(center: location.address)) %>
+  
+app/views/pages/about.html.erb:7:in `_app_views_pages_about_html_erb___1880043557820286840_69831134012840'
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:42:55 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (261.2ms)
+Completed 500 Internal Server Error in 265ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `location' for #<#<Class:0x007f05ac0a4ae8>:0x007f05a6650ab0>
+Did you mean?  localize):
+    4: 
+    5: <h2>Thành viên</h2>
+    6: <p><center> 1312801 Nguyễn Ngọc Đình Văn</center></p>
+    7: <%= image_tag google_map(center: location.address) %>
+  
+app/views/pages/about.html.erb:7:in `_app_views_pages_about_html_erb___1880043557820286840_69831121603100'
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:44:42 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (324.4ms)
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `location' for #<#<Class:0x007f05ac0a4ae8>:0x007f05a65f9878>
+Did you mean?  localize):
+    4: 
+    5: <h2>Thành viên</h2>
+    6: <p><center> 1312801 Nguyễn Ngọc Đình Văn</center></p>
+    7: <%= image_tag(google_map center: location.address) %>
+  
+app/views/pages/about.html.erb:7:in `_app_views_pages_about_html_erb___1880043557820286840_69831121424640'
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:44:49 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/pages/about.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+ image_tag("google_map" center: location.address) );
+                              ^
+/home/van/lab01-1312801/app/views/pages/about.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+p" center: location.address) );
+                              ^):
+  
+app/views/pages/about.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pages/about.html.erb:7: syntax error, unexpected ')', expecting keyword_end
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:46:47 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-09-30 00:46:51 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2017-09-30 00:46:53 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/album" for 127.0.0.1 at 2017-09-30 00:46:53 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 65ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 00:46:54 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 72ms (Views: 64.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:46:54 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 71ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:52:37 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `lat' for nil:NilClass):
+    4: 
+    5: <h2>Thành viên</h2>
+    6: <p><center> 1312801 Nguyễn Ngọc Đình Văn</center></p>
+    7: <%= static_map_for @user%>
+  
+app/helpers/pages_helper.rb:4:in `static_map_for'
+app/views/pages/about.html.erb:7:in `_app_views_pages_about_html_erb___1880043557820286840_69831118126680'
+Started GET "/about" for 127.0.0.1 at 2017-09-30 00:54:29 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `latitude' for nil:NilClass):
+    5: <h2>Thành viên</h2>
+    6: <p><center> 1312801 Nguyễn Ngọc Đình Văn</center></p>
+    7: <div id="map">
+    8: <%= image_tag "http://maps.google.com/maps/api/staticmap?size=700x400&sensor=false&zoom=16&markers=#{@post.latitude}%2C#{@post.longitude}" %>
+    9: </div>
+  
+app/views/pages/about.html.erb:8:in `_app_views_pages_about_html_erb___1880043557820286840_69831119589420'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(279088437195799245)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLocations (20170929175850)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (99.7ms)[0m  [1m[35mCREATE TABLE "locations" ("id" bigserial primary key, "address" character varying, "latitude" float, "longitude" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170929175850"]]
+  [1m[35m (20.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(279088437195799245)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/about" for 127.0.0.1 at 2017-09-30 01:01:53 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `latitude' for nil:NilClass):
+    5: <h2>Thành viên</h2>
+    6: <p><center> 1312801 Nguyễn Ngọc Đình Văn</center></p>
+    7: <div id="map">
+    8:   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+    9: </div>
+  
+app/views/pages/about.html.erb:8:in `_app_views_pages_about_html_erb___1880043557820286840_69831171855840'
+Started GET "/locations/1" for 127.0.0.1 at 2017-09-30 01:05:12 +0700
+Processing by LocationsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `geocoded_by' for #<Class:0x007f05ac921068>):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:72:in `set_location'
+Started GET "/locations/new" for 127.0.0.1 at 2017-09-30 01:05:32 +0700
+Processing by LocationsController#new as HTML
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `geocoded_by' for #<Class:0x007f05841a3b88>):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:22:in `new'
+Started GET "/locations/new" for 127.0.0.1 at 2017-09-30 01:06:52 +0700
+Processing by LocationsController#new as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f05a66db0c0>
+Did you mean?  attr_accessor):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:22:in `new'
+Started GET "/locations/new" for 127.0.0.1 at 2017-09-30 01:08:05 +0700
+Processing by LocationsController#new as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x007f05a5ffaad0>
+Did you mean?  attr_accessor):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:22:in `new'
+Started GET "/locations/new" for 127.0.0.1 at 2017-09-30 01:08:32 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LocationsController#new as HTML
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x00564e9075b0b8>
+Did you mean?  attr_accessor):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:22:in `new'
+Started GET "/locations/new" for 127.0.0.1 at 2017-09-30 01:08:36 +0700
+Processing by LocationsController#new as HTML
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 8.7ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x00564e901e84a0>
+Did you mean?  attr_accessor):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:22:in `new'
+Started GET "/locations/new" for 127.0.0.1 at 2017-09-30 01:08:36 +0700
+Processing by LocationsController#new as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x00564e90398908>
+Did you mean?  attr_accessor):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:22:in `new'
+Started GET "/locations" for 127.0.0.1 at 2017-09-30 01:08:39 +0700
+Processing by LocationsController#index as HTML
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `attr_accessible' for #<Class:0x00564e9022bcf0>
+Did you mean?  attr_accessor):
+  
+app/models/location.rb:2:in `<class:Location>'
+app/models/location.rb:1:in `<top (required)>'
+app/controllers/locations_controller.rb:10:in `index'
+Started GET "/" for 127.0.0.1 at 2017-09-30 01:12:03 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 944ms (Views: 924.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 01:12:21 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `latitude' for nil:NilClass):
+    5: <h2>Thành viên</h2>
+    6: <p><center> 1312801 Nguyễn Ngọc Đình Văn</center></p>
+    7: <div id="map">
+    8:   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+    9: </div>
+  
+app/views/pages/about.html.erb:8:in `_app_views_pages_about_html_erb___2523526963327259199_70346665473540'
+Started GET "/about" for 127.0.0.1 at 2017-09-30 01:12:33 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 01:12:35 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 66ms (Views: 65.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2017-09-30 01:12:36 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 72ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+
+

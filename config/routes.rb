@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :locations
   get 'blogs/index'
-
+get '/sessions/login',to: 'sessions#new', as: :login
+post '/sessions/login', to: 'sessions#create', as: nil
   get 'sessions/new'
+  delete '/sessions/logout',  to: 'sessions#destroy', as: :logout
 
   root 'pages#home'
 get '/home', to: 'pages#home'

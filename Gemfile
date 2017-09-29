@@ -36,6 +36,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 gem 'faker'
 gem 'bcrypt',         '3.1.11'
+gem 'gmaps4rails'
 ruby '2.4.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
