@@ -6,7 +6,7 @@ Thành viên:
 * [ ] 1312801 Nguyễn Ngọc Đình Văn(1312801)
 
 
-URL: **URL hosting của bài tập**
+URL: https://pacific-springs-86364.herokuapp.com/
 
 ## Yêu cầu
 
