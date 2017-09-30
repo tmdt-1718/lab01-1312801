@@ -3366,3 +3366,2006 @@ Processing by PagesController#home as HTML
   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
 Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "blogs" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$ahAsS1IywFCGghZ1PerPe.rHM3okoVU.To6HhYqv6I0RTcUkK/n9a', '2017-09-30 15:18:44.083725', '2017-09-30 15:18:44.083725', 762146111)[0m
+  [1m[36mFixture Delete (0.4ms)[0m  [1m[31mDELETE FROM "blogs"[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:18:44.094370', '2017-09-30 15:18:44.094370', 980190962)[0m
+  [1m[36mFixture Insert (0.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:18:44.094370', '2017-09-30 15:18:44.094370', 298486374)[0m
+  [1m[35m (18.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:18:44 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (408.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 554ms (Views: 546.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_Name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_Email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 15:18:44.888538"], ["updated_at", "2017-09-30 15:18:44.888538"], ["password_digest", "$2a$04$klP47SnBU2Gx3jOOJ2LB/uLBsA9HJXqPvULX3DlhsBDmdaGNTdwW6"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user_at_foo.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user.name@example."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar_baz.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar+baz.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Foo@ExAMPle.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["created_at", "2017-09-30 15:18:44.920157"], ["updated_at", "2017-09-30 15:18:44.920157"], ["password_digest", "$2a$04$myxMpXij6149h933srNp7Oq.Xa.irzvVQPwJgkk.6YX42I9kvmC2S"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146113], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2017-09-30 22:18:44 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_album
+------------------------------------------
+Started GET "/album" for 127.0.0.1 at 2017-09-30 22:18:44 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_blog
+-----------------------------------------
+Started GET "/blog" for 127.0.0.1 at 2017-09-30 22:18:44 +0700
+Processing by PagesController#blog as HTML
+  Rendering pages/blog.html.erb within layouts/application
+  Rendered pages/blog.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:18:44 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------
+SiteLayoutTest: test_layout_links
+---------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:18:44 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BlogsControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 22:18:44 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "michael@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/users/762146111
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/users/762146111" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146111"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:18:45 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "blogs" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$uvw0eLvIsgOMMBdwiYgeNeWjz4PWkfI50QQl98mJpFoZhPvlc.RbW', '2017-09-30 15:43:02.092652', '2017-09-30 15:43:02.092652', 762146111)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "blogs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:43:02.102506', '2017-09-30 15:43:02.102506', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:43:02.102506', '2017-09-30 15:43:02.102506', 298486374)[0m
+  [1m[35m (21.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "blogs" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:43:02 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BlogsControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 22:43:02 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 209ms (Views: 200.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:43:02 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (420.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 428ms (Views: 423.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 22:43:02 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+UsersSignupTest: test_valid_signup_information
+----------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:43:02 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 22:43:02 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 15:43:03.000018"], ["updated_at", "2017-09-30 15:43:03.000018"], ["password_digest", "$2a$04$vTjBPRG7YpXnof8/XzJuG.qBuxgHiNIvb99g/aAT30q804eKPLshS"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/762146112
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/762146112" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146112"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+UsersLoginTest: test_login_with_valid_information_followed_by_logout
+--------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------
+SiteLayoutTest: test_layout_links
+---------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Foo@ExAMPle.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["created_at", "2017-09-30 15:43:03.054784"], ["updated_at", "2017-09-30 15:43:03.054784"], ["password_digest", "$2a$04$8hnB8QqWFO6kJZL9dV6eQ.Gtufww8JhebUkC7sBucZegGp6vSHqfC"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146113], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 15:43:03.071445"], ["updated_at", "2017-09-30 15:43:03.071445"], ["password_digest", "$2a$04$5X7oMfmWgHVpkeNbPFUlxeKMGJAwfNQoLOyQ3ZASP8fslwz..65de"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_Email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user_at_foo.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user.name@example."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar_baz.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar+baz.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_Name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_blog
+-----------------------------------------
+Started GET "/blog" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+Processing by PagesController#blog as HTML
+  Rendering pages/blog.html.erb within layouts/application
+  Rendered pages/blog.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_album
+------------------------------------------
+Started GET "/album" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:43:03 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$EDG19rguwziuqAxZl9J25.F7FRTjg1wNknRRgjreL.Wxg7vhKWLim', '2017-09-30 15:49:28.039946', '2017-09-30 15:49:28.039946', 762146111)[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "blogs"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:49:28.047339', '2017-09-30 15:49:28.047339', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:49:28.047339', '2017-09-30 15:49:28.047339', 298486374)[0m
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+UsersSignupTest: test_valid_signup_information
+----------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (426.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 567ms (Views: 556.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 15:49:28.849402"], ["updated_at", "2017-09-30 15:49:28.849402"], ["password_digest", "$2a$04$5k./tY.zOrHt5X69g3gT5OD0Z1JhJ/9BzCdiz8R9so7HGBk204hca"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/762146112
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/762146112" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146112"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 1.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_blog
+-----------------------------------------
+Started GET "/blog" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by PagesController#blog as HTML
+  Rendering pages/blog.html.erb within layouts/application
+  Rendered pages/blog.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_album
+------------------------------------------
+Started GET "/album" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+UsersLoginTest: test_login_with_valid_information_followed_by_logout
+--------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BlogsControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------
+SiteLayoutTest: test_layout_links
+---------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:49:28 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user_at_foo.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user.name@example."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar_baz.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar+baz.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_Name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 15:49:28.984754"], ["updated_at", "2017-09-30 15:49:28.984754"], ["password_digest", "$2a$04$srAzQwwkH/GKt/wwLxhDDu.A8SUdO48wvji4qzoUIO9Ykv6GpU252"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_Email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Foo@ExAMPle.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["created_at", "2017-09-30 15:49:29.005972"], ["updated_at", "2017-09-30 15:49:29.005972"], ["password_digest", "$2a$04$L/1jwDQE7T8V97uU69ekQuErLGeIW3lOZFmlzBO68rNpsq/7dxVJC"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146114], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$3JBbHS5f5.BK9vxM/5AQbeiHdh4AEqofp77HoqLZp.4phDbfGsaTO', '2017-09-30 15:50:07.643544', '2017-09-30 15:50:07.643544', 762146111)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "blogs"[0m
+  [1m[36mFixture Insert (0.8ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:50:07.652113', '2017-09-30 15:50:07.652113', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 15:50:07.652113', '2017-09-30 15:50:07.652113', 298486374)[0m
+  [1m[35m (23.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "blogs" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Foo@ExAMPle.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["created_at", "2017-09-30 15:50:08.096893"], ["updated_at", "2017-09-30 15:50:08.096893"], ["password_digest", "$2a$04$7QyPt7SL7oJpkVDHoYCvkuhYah3MYTU5/cMdBqs5K9goYHy4GVjYi"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 15:50:08.121322"], ["updated_at", "2017-09-30 15:50:08.121322"], ["password_digest", "$2a$04$t0fuACzBvgFQD8SoqQz3Iuvfe1KbM4wYsHwHcV7A4rVoG/umCE4tm"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user_at_foo.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user.name@example."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar_baz.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar+baz.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_Email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_Name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (141.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 158ms (Views: 150.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_album
+------------------------------------------
+Started GET "/album" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_blog
+-----------------------------------------
+Started GET "/blog" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by PagesController#blog as HTML
+  Rendering pages/blog.html.erb within layouts/application
+  Rendered pages/blog.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BlogsControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------
+SiteLayoutTest: test_layout_links
+---------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+UsersSignupTest: test_valid_signup_information
+----------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 15:50:08.609072"], ["updated_at", "2017-09-30 15:50:08.609072"], ["password_digest", "$2a$04$N6q74zvcM5EmzcTCvunIDunhQ..A4rhDLybyre3RrItjGrBFjTvOy"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/762146114
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/762146114" for 127.0.0.1 at 2017-09-30 22:50:08 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146114"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146114], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146114], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "blogs" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$MNGrF3MNiPVU2lmwcaP3/.yAuJR/ixqNXHl0z2DxhHySUKUs8uYam', '2017-09-30 16:16:15.682402', '2017-09-30 16:16:15.682402', 762146111)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "blogs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 16:16:15.692484', '2017-09-30 16:16:15.692484', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 16:16:15.692484', '2017-09-30 16:16:15.692484', 298486374)[0m
+  [1m[35m (23.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "blogs" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_Name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_Email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user_at_foo.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user.name@example."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar_baz.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar+baz.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 16:16:16.149071"], ["updated_at", "2017-09-30 16:16:16.149071"], ["password_digest", "$2a$04$mb9uHiL4hv3kVGr3TzVq3..igO1S95u1ksK/dDZrsb51e7gi40Bk6"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Foo@ExAMPle.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["created_at", "2017-09-30 16:16:16.158753"], ["updated_at", "2017-09-30 16:16:16.158753"], ["password_digest", "$2a$04$iZAVrbIcXNEvdOLK6KGJXehEaV66mYzJHD2FnxOyD0VbGMEHZ8hFW"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146113], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------
+SiteLayoutTest: test_layout_links
+---------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 121ms (Views: 113.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_album
+------------------------------------------
+Started GET "/album" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_blog
+-----------------------------------------
+Started GET "/blog" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by PagesController#blog as HTML
+  Rendering pages/blog.html.erb within layouts/application
+  Rendered pages/blog.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BlogsControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+UsersSignupTest: test_valid_signup_information
+----------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 16:16:16.591890"], ["updated_at", "2017-09-30 16:16:16.591890"], ["password_digest", "$2a$04$coIL/3v23nH1Kt0pYOIB3en1pGhJgIArrHSuQmH8IbUYj85K7wU9K"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/762146114
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/762146114" for 127.0.0.1 at 2017-09-30 23:16:16 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146114"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146114], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146114], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "blogs" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$xui9cFlCCMfjd4siWOfUi.y1sXjeiAs5K2EZm569/Wqms5y51PGoS', '2017-09-30 16:18:31.979960', '2017-09-30 16:18:31.979960', 762146111)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "blogs"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 16:18:31.988384', '2017-09-30 16:18:31.988384', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 16:18:31.988384', '2017-09-30 16:18:31.988384', 298486374)[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "blogs" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------
+SiteLayoutTest: test_layout_links
+---------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 201ms (Views: 193.7ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Foo@ExAMPle.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["created_at", "2017-09-30 16:18:32.787252"], ["updated_at", "2017-09-30 16:18:32.787252"], ["password_digest", "$2a$04$4meNbeLOce1APb6vjjHCUOgDb3DNNoYFJn0IrfIejy/1z7NZuSFZa"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 16:18:32.793969"], ["updated_at", "2017-09-30 16:18:32.793969"], ["password_digest", "$2a$04$x6c6hqKkMxCpxTg6Q3uKpOSizdkj0p35Q32B4afBljLHzuj45jpVC"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_Email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_Name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user_at_foo.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user.name@example."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar_baz.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar+baz.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+UsersSignupTest: test_valid_signup_information
+----------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 16:18:32.855039"], ["updated_at", "2017-09-30 16:18:32.855039"], ["password_digest", "$2a$04$qYJ08QpoysKqCYg/v.4kQeWCpMQLvx8MLF1zLhianrdxQF5JsZ/Xy"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/762146114
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/762146114" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146114"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146114], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146114], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 7.0ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BlogsControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.2ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_album
+------------------------------------------
+Started GET "/album" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_blog
+-----------------------------------------
+Started GET "/blog" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by PagesController#blog as HTML
+  Rendering pages/blog.html.erb within layouts/application
+  Rendered pages/blog.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "michael@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/users/762146111
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/users/762146111" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146111"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:18:32 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" DISABLE TRIGGER ALL;ALTER TABLE "locations" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$yk4h.HVQyYIDsbIPIVI3buLmVjMb/iF4H2GnKQWOLe1Z7IEs7.E6C', '2017-09-30 16:27:54.274752', '2017-09-30 16:27:54.274752', 762146111)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "blogs"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 16:27:54.283046', '2017-09-30 16:27:54.283046', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "user_id", "created_at", "updated_at", "id") VALUES ('MyString', 'MyText', 1, '2017-09-30 16:27:54.283046', '2017-09-30 16:27:54.283046', 298486374)[0m
+  [1m[35m (23.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "blogs" ENABLE TRIGGER ALL;ALTER TABLE "locations" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:27:54 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (365.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 490ms (Views: 483.4ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------
+UsersLoginTest: test_login_with_valid_information
+-------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+Started POST "/login" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "michael@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/users/762146111
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/users/762146111" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146111"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------------------------------------
+UsersLoginTest: test_login_with_valid_information_followed_by_logout
+--------------------------------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms)
+Started POST "/login" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"michael@example.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "michael@example.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/users/762146111
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/users/762146111" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146111"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146111], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.6ms)
+Started DELETE "/logout" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by SessionsController#destroy as HTML
+Redirected to http://www.example.com/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------
+UsersSignupTest: test_invalid_signup_information
+------------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"", "email"=>"user@invalid", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@invalid"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 5.5ms | ActiveRecord: 2.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------
+UsersSignupTest: test_valid_signup_information
+----------------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"name"=>"Example User", "email"=>"user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 16:27:55.152012"], ["updated_at", "2017-09-30 16:27:55.152012"], ["password_digest", "$2a$04$oxMNUrAcYmHdu4dGeWsI5ezIIieyg.tq32zCLgsC2DBglS0T/t5/S"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/762146112
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started GET "/users/762146112" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"762146112"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146112], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+Started GET "/signup" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+--------------------------------------
+UserTest: test_Email_should_be_present
+--------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------------------------
+UserTest: test_email_addresses_should_be_saved_as_lower-case
+------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Foo@ExAMPle.CoM"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "foo@example.com"], ["created_at", "2017-09-30 16:27:55.173578"], ["updated_at", "2017-09-30 16:27:55.173578"], ["password_digest", "$2a$04$H3B.X8Tl2IP1GdoGPg4xV.1OOwTubVvYTLfFcSWw6i1gcJVOd.Wra"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 762146113], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_be_present_(nonblank)
+----------------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------------
+UserTest: test_email_addresses_should_be_unique
+-----------------------------------------------
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Example User"], ["email", "user@example.com"], ["created_at", "2017-09-30 16:27:55.183027"], ["updated_at", "2017-09-30 16:27:55.183027"], ["password_digest", "$2a$04$yJ9mJI7VTcr80xhp0wWQdu5T4d3KQApJWgJbfw2cWYJvLUWMioNgy"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@EXAMPLE.COM"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------
+UserTest: test_should_be_valid
+------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------------------------
+UserTest: test_email_validation_should_accept_valid_addresses
+-------------------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "USER@foo.COM"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "A_US-ER@foo.bar.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "first.last@foo.jp"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "alice+bob@baz.cn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------------------
+UserTest: test_email_validation_should_reject_invalid_addresses
+---------------------------------------------------------------
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example,com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user_at_foo.org"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user.name@example."], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar_baz.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "foo@bar+baz.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------
+UserTest: test_Name_should_be_present
+-------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+UserTest: test_email_should_not_be_too_long
+-------------------------------------------
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UserTest: test_name_should_not_be_too_long
+------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+----------------------------------------------------
+UserTest: test_password_should_have_a_minimum_length
+----------------------------------------------------
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "user@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-------------------------------------------
+SessionsControllerTest: test_should_get_new
+-------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+BlogsControllerTest: test_should_get_index
+------------------------------------------
+Started GET "/blogs/index" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_album
+------------------------------------------
+Started GET "/album" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by PagesController#album as HTML
+  Rendering pages/album.html.erb within layouts/application
+  Rendered pages/album.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_home
+-----------------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+PagesControllerTest: test_should_get_about
+------------------------------------------
+Started GET "/about" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by PagesController#about as HTML
+  Rendering pages/about.html.erb within layouts/application
+  Rendered pages/about.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+-----------------------------------------
+PagesControllerTest: test_should_get_blog
+-----------------------------------------
+Started GET "/blog" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by PagesController#blog as HTML
+  Rendering pages/blog.html.erb within layouts/application
+  Rendered pages/blog.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------
+SiteLayoutTest: test_layout_links
+---------------------------------
+Started GET "/" for 127.0.0.1 at 2017-09-30 23:27:55 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
