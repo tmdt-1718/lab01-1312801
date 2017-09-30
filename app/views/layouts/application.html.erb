@@ -6,35 +6,43 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/home">FastMail</a>
+      <a class="navbar-brand" >
+          <%= link_to "FastMail", root_path, class: 'brand' %>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
-          </li>
+          <li class="nav-item active" >
+          <%= link_to "Home", root_path, class: 'link-to-text-color' %>
+        </li>
       <li class="nav-item">
-        <a class="nav-link" href="/album">Album</a>
+        <%= link_to "Album", album_path, class: 'link-to-text-color' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/blogs/index">Blog</a>
+        <%= link_to "BLog", blog_path, class: 'link-to-text-color' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
+        <%= link_to "About", about_path, class: 'link-to-text-color' %>
       </li>
+      <% if logged_in? %>
+      <li><%= link_to current_user[:name],current_user,class:'link-to-text-color'%></li>
       <li class="nav-item">
-        <a class="nav-link" href="/sessions/login">Login</a>
+        <%= link_to "Logout", logout_path, class: 'link-to-text-color' %>
       </li>
+      <% else %>
       <li class="nav-item">
-        <a class="nav-link" href="/sessions/login" method="destroy">Logout</a>
+        <%= link_to "Login", login_path, class: 'link-to-text-color' %>
       </li>
+      <% end %>
+
         </ul>
       </div>
     </nav>
