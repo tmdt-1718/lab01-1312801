@@ -1,8 +1,9 @@
-<div class="row">
+<div class="row mb-3">
   <div class="col-md-12">
+    <h1><%= @blog.user.name %></h1>
     <div class="card">
       <div class="card-header">
-        <%= @blog.title %>
+        Title: <%= @blog.title %>
       </div>
       <div class="card-body">
         <h6 class="card-subtitle mb-2 text-muted"><%= @blog.user.name %></h6>
@@ -10,7 +11,7 @@
       </div>
   </div>
 </div>
-  <div class="cold-md-12">
+  <div class="col-md-12">
     <div class="card">
       <div class="card-header">
         Comments

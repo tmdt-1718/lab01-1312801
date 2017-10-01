@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blogs
+  resources :users
   get 'comments/index'
 
   get 'blogs/index'
@@ -11,10 +13,9 @@ post '/login', to: 'sessions#create', as: nil
   get '/home', to: 'pages#home'
 get  '/about', to: 'pages#about'
 get '/album', to: 'pages#album'
-get '/blog', to: 'blogs#index'
+get 'blogs', to: 'blogs#index'
 get '/signup', to: 'users#new'
-get '/blogshow/:id',to:'blogs#show'
-resources :blogs
-resources :users
+get 'blog', to: 'blogs#show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
