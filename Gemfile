@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,6 +39,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'will_paginate',   '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
+  gem 'pg', '~> 0.20'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -60,7 +58,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 group :production do
-  gem 'pg', '~> 0.20'
 
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
