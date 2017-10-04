@@ -1,0 +1,11 @@
+<li id="gallery-<%= gallery.id %>">
+  <%= link_to gravatar_for(gallery.user, size: 50), gallery.user %>
+  <span class="user"><%= link_to gallery.user.name, gallery.user %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(gallery.created_at) %> ago.
+    <% if current_user?(gallery.user) %>
+    <%= link_to "Edit", edit_gallery_path %>
+    <%= link_to "Delete",blog, method: :delete,data: {confirm: "Are you sure?"}%>
+    <% end%>
+  </span>
+</li>
