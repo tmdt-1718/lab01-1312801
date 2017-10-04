@@ -1,0 +1,9 @@
+<h1>All Images</h1>
+<ul id="images">
+<% @paintings.each do |painting| %>
+<li>
+<%= link_to painting.name, paintings_index_path(painting) %>
+</li>
+<% end %>
+</ul>
+<%= link_to "Create a New Images", new_painting_path, class: "new_article" %>

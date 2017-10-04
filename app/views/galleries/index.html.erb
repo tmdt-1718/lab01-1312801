@@ -1,0 +1,7 @@
+<h1>Album</h1>
+<% @galleries.each do |gallery| %>
+<li>
+<%= gallery.name %>
+</li>
+<% end %>
+<%= link_to "Create painting",new_painting_path %>

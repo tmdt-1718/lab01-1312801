@@ -1,0 +1,12 @@
+<li id="blog-<%= blog.id %>">
+  <%= link_to gravatar_for(blog.user, size: 50), blog.user %>
+  <span class="user"><%= link_to blog.user.name, blog.user %></span>
+  <span class="body"><%= blog.body %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(blog.created_at) %> ago.
+    <% if current_user?(blog.user) %>
+    <%= link_to "Edit", edit_blog_path %>
+    <%= link_to "Delete",blog, method: :delete,data: {confirm: "Are you sure?"}%>
+    <% end%>
+  </span>
+</li>

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  get 'paintings/index'
+
   resources :blogs
+  resources :paintings
   resources :users
+  resources :galleries
   get 'comments/index'
 
   get 'blogs/index'

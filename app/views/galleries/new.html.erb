@@ -1,0 +1,11 @@
+<h1>Albums</h1>
+<% if logged_in? %>
+<%= form_for @gallery do |f| %>
+<p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+      <p><%= f.submit %></p>
+</p>
+<% end %>
+<% else %>
+<% end %>
