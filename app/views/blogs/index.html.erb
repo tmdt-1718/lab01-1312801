@@ -3,7 +3,6 @@
     <div class="col-9 col-sm-10 col-md-10 col-lg-11 col-xl-11">
 <% if logged_in?%>
 <h1>Blogs</h1>
-<
       <%= @blogs.count  %> blogs
       <% if @blogs.count ==0 %>
       <h2>Welcome to Blogs</h2>
@@ -13,7 +12,8 @@
       <a><%= link_to "Create a New Article", new_blog_path, class: "new_article" %></a>
     </div>
   </div>
-      <% end %>
+  <% end %>
+      <%  if @blogs.count >0 %>
       <% @blogs.each do |b| %>
 
       <div class="card" >
@@ -43,5 +43,5 @@
        <p id="cau1">Create an account if you havent got one</p>
         </div>
       </div>
-
+  <% end %>
   <% end %>

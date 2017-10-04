@@ -21,11 +21,4 @@ class BlogTest < ActiveSupport::TestCase
   test "order should be most recent first" do
     assert_equal blogs(:most_recent), Blog.first
   end
-  test "associated blogs should be destroyed" do
-    @user.save
-    @user.blogs.create!(body: "Lorem ipsum")
-    assert_difference 'Blog.count', -1 do
-      @user.destroy
-    end
-  end
 end
