@@ -8,6 +8,6 @@ class CreateBlogs < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_foreign_key :blogs,:users, column: :user_id
+    add_foreign_key :blogs , column: :user_id
   end
 end
