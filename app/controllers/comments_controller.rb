@@ -9,6 +9,9 @@ class CommentsController < ApplicationController
   def show
   	@comment=Comment.find(params[:id])
   end
+  def create
+  end
   def edit
+  	@comment=Comment.find(params[:id])
   end
 end
