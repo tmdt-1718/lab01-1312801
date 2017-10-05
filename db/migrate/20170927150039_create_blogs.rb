@@ -3,10 +3,10 @@ class CreateBlogs < ActiveRecord::Migration[5.1]
     create_table :blogs do |t|
       t.string :title
       t.text :body
-      t.references :user, index: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
-    add_foreign_key :blogs , column: :user_id
+    add_index :blogs, [:user_id, :created_at]
   end
 end
