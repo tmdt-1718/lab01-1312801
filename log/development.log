@@ -22278,3 +22278,1068 @@ FOREIGN KEY ("user_id")
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(279088437195799245)[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-10-05 23:19:38 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 345ms (Views: 335.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-10-05 23:19:43 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (547.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 681ms (Views: 667.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2017-10-05 23:19:57 +0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 67.8ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-10-05 23:20:12 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wvF0xCn50z1hdgr07ln30bn+5zYzv7ZRbpoRDt/kAWYmIjsFoegQEcTlrRjIS+q5W7QR1kZOqYnJEqfAU9ExWA==", "user"=>{"name"=>"van", "email"=>"dinhvan@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "dinhvan@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "van"], ["email", "dinhvan@gmail.com"], ["created_at", "2017-10-05 16:20:13.088452"], ["updated_at", "2017-10-05 16:20:13.088452"], ["password_digest", "$2a$10$Yp0.ah7ZCzp0jJTrS7bhDuQsgkZQ8fdthw.Nk9eMAEZWvh55enfs2"]]
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 112ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-10-05 23:20:13 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 111ms (Views: 57.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:20:18 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 57.4ms | ActiveRecord: 2.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(279088437195799245)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(279088437195799245)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:26:24 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (33.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 81ms (Views: 69.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:27:54 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/index.html.erb:16: syntax error, unexpected keyword_else
+        if else @blogs.count >0 
+               ^
+/home/van/lab01-1312801/app/views/blogs/index.html.erb:49: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/blogs/index.html.erb:16: syntax error, unexpected keyword_else
+app/views/blogs/index.html.erb:49: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:28:22 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/index.html.erb:49: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/blogs/index.html.erb:49: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:28:46 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/index.html.erb:48: syntax error, unexpected keyword_end, expecting end-of-input
+   end 
+      ^):
+  
+app/views/blogs/index.html.erb:48: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:29:01 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/index.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/blogs/index.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:29:54 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (30.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 105ms (Views: 89.6ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:30:01 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 73ms (Views: 61.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:42:35 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (395.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4483ms (Views: 4471.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:48:02 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2171ms (Views: 2168.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:48:56 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2128ms (Views: 2125.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:49:15 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2167ms (Views: 2165.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:49:21 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 81ms (Views: 77.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:49:45 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2770ms (Views: 2767.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-05 23:53:41 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 122.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:54:06 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:54:39 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 112ms (Views: 109.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:55:28 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-05 23:56:13 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:01:13 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+Completed 200 OK in 63ms (Views: 60.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-06 00:01:21 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-06 00:03:05 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2127ms (Views: 2125.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-06 00:03:25 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2370ms (Views: 2367.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/new" for 127.0.0.1 at 2017-10-06 00:03:59 +0700
+Processing by BlogsController#new as HTML
+  Rendering blogs/new.html.erb within layouts/application
+  Rendered blogs/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2165ms (Views: 2163.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/blogs" for 127.0.0.1 at 2017-10-06 00:05:31 +0700
+Processing by BlogsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"blqnkzuNL746wlXWVa/9GpVtKKB3pV8d/ycNbnOChwpWnkZxhfmu3+HYLnbfLj2H1U7z5Mr5Ft0I7jpXTtEb/w==", "blog"=>{"title"=>"van", "body"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba"}, "commit"=>"Create Blog"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "blogs" ("title", "body", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "van"], ["body", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba"], ["created_at", "2017-10-05 17:05:31.897726"], ["updated_at", "2017-10-05 17:05:31.897726"], ["user_id", 1]]
+  [1m[35m (43.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 56ms (ActiveRecord: 44.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-10-06 00:05:31 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of blogs/_blog.html.erb [1 times] (2.3ms)
+  Rendered users/show.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 72.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:05:36 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-10-06 00:05:38 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of blogs/_blog.html.erb [1 times] (2.7ms)
+  Rendered users/show.html.erb within layouts/application (13.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 80ms (Views: 71.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:07:36 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (19.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 78ms (Views: 67.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-10-06 00:07:38 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mBlog Load (1.0ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of blogs/_blog.html.erb [1 times] (4.1ms)
+  Rendered users/show.html.erb within layouts/application (21.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 109ms (Views: 69.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-10-06 00:07:39 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mBlog Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "blogs" WHERE "blogs"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs" WHERE "blogs"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."user_id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["user_id", 1], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of blogs/_blog.html.erb [1 times] (2.0ms)
+  Rendered users/show.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 62ms (Views: 56.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:07:43 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:12:00 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (20.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 78ms (Views: 67.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:12:02 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:12:31 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:14:17 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 65ms (Views: 62.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:14:20 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  Rendered blogs/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+Completed 200 OK in 78ms (Views: 76.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:17:43 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/index.html.erb:50: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^
+/home/van/lab01-1312801/app/views/blogs/index.html.erb:52: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/blogs/index.html.erb:50: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/blogs/index.html.erb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:18:04 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 00:35:06 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    19: 
+    20:       <div class="card" >
+    21:     <div class="card-body">
+    22:       <a class="card-title"><%= b.title Faker::Lorem.sentence %></a>
+    23:       <h6 class="card-subtitle mb-2 text-muted"><%=current_user[:name] %></h6>
+    24:       <p class="card-text"><%= b.body %></p>
+    25:       <a href="<%= blog_path(b) %>" class="card-link">Show</a>
+  
+app/views/blogs/index.html.erb:22:in `block in _app_views_blogs_index_html_erb__4327007423136800262_70162220744320'
+app/views/blogs/index.html.erb:18:in `_app_views_blogs_index_html_erb__4327007423136800262_70162220744320'
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 01:01:35 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  Rendered blogs/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/index.html.erb:26: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+path, class 'btn btn-primary');@output_buffer.safe_append='
+                              ^
+/home/van/lab01-1312801/app/views/blogs/index.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/van/lab01-1312801/app/views/blogs/index.html.erb:48: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+               ^
+/home/van/lab01-1312801/app/views/blogs/index.html.erb:51: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/van/lab01-1312801/app/views/blogs/index.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/blogs/index.html.erb:26: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+app/views/blogs/index.html.erb:31: syntax error, unexpected keyword_end, expecting ')'
+app/views/blogs/index.html.erb:48: syntax error, unexpected keyword_end, expecting ')'
+app/views/blogs/index.html.erb:51: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/blogs/index.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 01:02:23 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"blogs"}, missing required keys: [:id]):
+    23:       <h6 class="card-subtitle mb-2 text-muted"><%=current_user[:name] %></h6>
+    24:       <p class="card-text"><%= b.body %></p>
+    25:       <a href="<%= blog_path(b) %>" class="card-link">Show</a>
+    26:       <%= link_to "Edit",edit_blog_path, class: 'btn btn-primary'%>
+    27:     <a href="#" class="card-link">Delete</a></br>
+    28:       <a><%= link_to "Create a New Article", new_blog_path, class: "new_article" %></a>
+    29:     </div>
+  
+app/views/blogs/index.html.erb:26:in `block in _app_views_blogs_index_html_erb__4327007423136800262_70162235954700'
+app/views/blogs/index.html.erb:18:in `_app_views_blogs_index_html_erb__4327007423136800262_70162235954700'
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 01:02:55 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 52ms (Views: 49.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:02:58 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (152.1ms)
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `fa_icon' for #<#<Class:0x007f9fd6668b90>:0x007f9fc97ee738>):
+     9: 			<label>Body</label>
+    10: 			<%= f.text_area :body,class: 'form-control' %>
+    11: 		</div>
+    12: 		<button type="submit" class="btn-btn-primary"><%= fa_icon "save" %>Save</button>
+    13: 
+    14: 		<% end %>
+    15: 		
+  
+app/views/blogs/edit.html.erb:12:in `block in _app_views_blogs_edit_html_erb___365060933381179184_70162128533640'
+app/views/blogs/edit.html.erb:3:in `_app_views_blogs_edit_html_erb___365060933381179184_70162128533640'
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:09:10 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:10:01 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 62ms (Views: 52.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:10:02 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (1.2ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:10:36 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 47.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:10:38 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 46.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:15:15 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/edit.html.erb:12: syntax error, unexpected '='
+append=( link_to "Save",class='btn btn-primary', class='fa f
+                              ^
+/home/van/lab01-1312801/app/views/blogs/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+Save",class='btn btn-primary', class='fa fa-floppy-o' aria_h
+                              ^
+/home/van/lab01-1312801/app/views/blogs/edit.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+s='fa fa-floppy-o' aria_hidden="true" );@output_buffer.safe_
+                              ^):
+  
+app/views/blogs/edit.html.erb:12: syntax error, unexpected '='
+append=( link_to "Save",class='btn btn-primary', class='fa f
+app/views/blogs/edit.html.erb:12: syntax error, unexpected ',', expecting ')'
+app/views/blogs/edit.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:15:47 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/edit.html.erb:12: syntax error, unexpected '='
+append=( link_to "Save",class='btn btn-primary' );@output_bu
+                              ^):
+  
+app/views/blogs/edit.html.erb:12: syntax error, unexpected '='
+append=( link_to "Save",class='btn btn-primary' );@output_bu
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:16:22 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.7ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/edit.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+s:'fa fa-floppy-o' aria_hidden="true" );@output_buffer.safe_
+                              ^):
+  
+app/views/blogs/edit.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:16:47 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 55ms (Views: 52.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:18:14 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 61ms (Views: 57.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:20:11 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:21:49 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 75.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:21:51 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 54ms (Views: 50.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:27:35 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 48.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:27:36 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 52.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:28:58 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/edit.html.erb:16: unknown regexp options - dv
+/home/van/lab01-1312801/app/views/blogs/edit.html.erb:16: unmatched close parenthesis: /button>
+
+		<% end );@output_buffer.safe_append='
+		
+	</i
+/home/van/lab01-1312801/app/views/blogs/edit.html.erb:18: syntax error, unexpected '<'
+</div> 
+ ^
+/home/van/lab01-1312801/app/views/blogs/edit.html.erb:18: unterminated regexp meets end of file):
+  
+app/views/blogs/edit.html.erb:16: unknown regexp options - dv
+app/views/blogs/edit.html.erb:16: unmatched close parenthesis: /button>
+app/views/blogs/edit.html.erb:18: syntax error, unexpected '<'
+app/views/blogs/edit.html.erb:18: unterminated regexp meets end of file
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 01:29:09 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...rt "blogs.scss"": expected selector or at-rule, was "@import "font-a..."):
+    4:     <title>FastMail</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <%= render 'layouts/shim' %>
+   10:   </head>
+  
+app/assets/stylesheets/application.scss:6
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2428015624931920882_70162133558220'
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 01:29:24 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Invalid CSS after "...rt "blogs.scss"": expected selector or at-rule, was "@import "font-a..."):
+    4:     <title>FastMail</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <%= render 'layouts/shim' %>
+   10:   </head>
+  
+app/assets/stylesheets/application.scss:6
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2428015624931920882_70162285695000'
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 01:29:57 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 505ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: font-awesome.
+Load paths:
+  /home/van/lab01-1312801/app/assets/config
+  /home/van/lab01-1312801/app/assets/images
+  /home/van/lab01-1312801/app/assets/javascripts
+  /home/van/lab01-1312801/app/assets/stylesheets
+  /home/van/.rvm/gems/ruby-2.4.1/gems/gmaps4rails-2.1.2/vendor/assets/javascripts
+  /home/van/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/van/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/van/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/van/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.4/lib/assets/compiled
+  /home/van/.rvm/gems/ruby-2.4.1/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/van/lab01-1312801/node_modules
+  /home/van/.rvm/gems/ruby-2.4.1/gems/popper_js-1.11.1/assets/javascripts
+  /home/van/.rvm/gems/ruby-2.4.1/gems/bootstrap-4.0.0.beta/assets/stylesheets
+  /home/van/.rvm/gems/ruby-2.4.1/gems/bootstrap-4.0.0.beta/assets/javascripts
+  /home/van/.rvm/gems/ruby-2.4.1/gems/bootstrap-4.0.0.beta/assets/stylesheets):
+    4:     <title>FastMail</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:     <%= render 'layouts/shim' %>
+   10:   </head>
+  
+app/assets/stylesheets/application.scss:6
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2428015624931920882_70162149908600'
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 01:30:56 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (32.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 3620ms (Views: 3593.9ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 01:31:03 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (10.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 69.4ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/blogs/1" for 127.0.0.1 at 2017-10-06 01:31:09 +0700
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UlTiYuThRrp70zRtf0bkODR6+Wb4NkNHVONj8A+4Pc2gdtxJDnYY0L3Qa3TJ6eUpj6jAsleHG09Q3M5Lx9/ZTQ==", "blog"=>{"title"=>"van", "body"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba"}, "id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+No template found for BlogsController#update, rendering head :no_content
+Completed 204 No Content in 14ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 02:03:32 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/van/lab01-1312801/app/controllers/blogs_controller.rb:53: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/blogs_controller.rb:53: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 02:03:50 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.8ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 7.8ms)
+
+
+  
+SyntaxError (/home/van/lab01-1312801/app/views/blogs/edit.html.erb:3: syntax error, unexpected tLABEL
+fer.append=  form_with (model: @blog, local: true) do |f|@ou
+                              ^
+/home/van/lab01-1312801/app/views/blogs/edit.html.erb:21: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/blogs/edit.html.erb:3: syntax error, unexpected tLABEL
+app/views/blogs/edit.html.erb:21: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/blogs/1/edit" for 127.0.0.1 at 2017-10-06 02:04:40 +0700
+Processing by BlogsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/edit.html.erb within layouts/application
+  Rendered blogs/edit.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 305ms (Views: 299.5ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/blogs/1" for 127.0.0.1 at 2017-10-06 02:04:42 +0700
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IRivSKp2GcKQeJzjEZkFdUBUdZUxeUkEAGXuSSUZncUZ3E6qFAKYo0ti50ObGMXoAHeu0YwlAMT3rNlwGEoBMA==", "blog"=>{"title"=>"van", "body"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba"}, "id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 293ms (ActiveRecord: 1.3ms)
+
+
+  
+NameError (undefined local variable or method `blog' for #<BlogsController:0x007f48fc9d0228>
+Did you mean?  @blog):
+  
+app/controllers/blogs_controller.rb:33:in `update'
+Started PATCH "/blogs/1" for 127.0.0.1 at 2017-10-06 02:05:17 +0700
+Processing by BlogsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IRivSKp2GcKQeJzjEZkFdUBUdZUxeUkEAGXuSSUZncUZ3E6qFAKYo0ti50ObGMXoAHeu0YwlAMT3rNlwGEoBMA==", "blog"=>{"title"=>"van", "body"=>"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbba"}, "id"=>"1"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogs/1
+Completed 302 Found in 53ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/blogs/1" for 127.0.0.1 at 2017-10-06 02:05:17 +0700
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (22.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+  Rendered blogs/show.html.erb within layouts/application (42.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 167ms (Views: 139.2ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/blogs/1" for 127.0.0.1 at 2017-10-06 02:12:51 +0700
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.4ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+  Rendered blogs/show.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 90ms (Views: 84.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 02:13:02 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 59.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/blogs/1" for 127.0.0.1 at 2017-10-06 02:13:05 +0700
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT  "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 ORDER BY "blogs"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogs/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."blog_id" = $1[0m  [["blog_id", 1]]
+  Rendered blogs/show.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 79ms (Views: 73.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 02:13:09 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+Completed 200 OK in 76ms (Views: 72.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/blogs" for 127.0.0.1 at 2017-10-06 02:13:37 +0700
+Processing by BlogsController#index as HTML
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "blogs"[0m
+  [1m[36mBlog Load (0.3ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" ORDER BY "blogs"."created_at" DESC[0m
+  Rendered blogs/index.html.erb within layouts/application (46.2ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+Completed 200 OK in 137ms (Views: 119.3ms | ActiveRecord: 9.3ms)
+
+

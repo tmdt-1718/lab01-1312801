@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
     @blog.user_id=current_user.id
     if @blog.save
     flash[:success]="Done!"
-    redirect_to user_path(current_user.id)
+    redirect_to blog_path(current_user.id)
   else
     render 'new'
     end
@@ -26,9 +26,18 @@ class BlogsController < ApplicationController
   def edit
         @blog=Blog.find(params[:id])
   end
+
   def update
         @blog=Blog.find(params[:id])
+        if @blog.update(title: params[:blog][:title],body: params[:blog][:body])
+          flash[:success]= "Update blog #{@blog.id} successfully!!"
+          redirect_to blog_path(@blog.id)
+        else
+          flash[:error]= "Fail to update blog #{@blog.id} !!"
+          render :edit
+        end
   end
+
   def destroy
     @blog.destroy
     flash[:success]=" Blogs deleted!"

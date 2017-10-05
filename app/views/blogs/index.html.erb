@@ -1,9 +1,9 @@
 
   <div class="row">
-    <div class="col-9 col-sm-10 col-md-10 col-lg-11 col-xl-11">
+    <div class="col-12">
 <% if logged_in?%>
+
 <h1>Blogs</h1>
-      <%= @blogs.count  %> blogs
       <% if @blogs.count ==0 %>
       <h2>Welcome to Blogs</h2>
       <h3><center>U can write your first blog here</center></h3>
@@ -13,20 +13,22 @@
     </div>
   </div>
   <% end %>
-      <%  if @blogs.count >0 %>
+      <% if @blogs.count >0 %>
+
       <% @blogs.each do |b| %>
 
       <div class="card" >
     <div class="card-body">
       <a class="card-title"><%= b.title %></a>
       <h6 class="card-subtitle mb-2 text-muted"><%=current_user[:name] %></h6>
-      <p class="card-text"><%= b.body %></p>
+      <p class="card-text"><%= truncate(b.body) %></p>
       <a href="<%= blog_path(b) %>" class="card-link">Show</a>
-      <a href="#" class="card-link">Edit</a>
+      <%= link_to "Edit",edit_blog_path(b), class: 'btn btn-primary'%>
     <a href="#" class="card-link">Delete</a></br>
       <a><%= link_to "Create a New Article", new_blog_path, class: "new_article" %></a>
     </div>
   </div>
+  <% end %>
   <% end %>
       <% else %>
 
@@ -44,4 +46,4 @@
         </div>
       </div>
   <% end %>
-  <% end %>
+
