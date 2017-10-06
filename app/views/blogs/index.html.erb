@@ -14,20 +14,27 @@
   </div>
   <% end %>
       <% if @blogs.count >0 %>
-
-      <% @blogs.each do |b| %>
-
-      <div class="card" >
-    <div class="card-body">
-      <a class="card-title"><%= b.title %></a>
-      <h6 class="card-subtitle mb-2 text-muted"><%=current_user[:name] %></h6>
-      <p class="card-text"><%= truncate(b.body) %></p>
-      <a href="<%= blog_path(b) %>" class="card-link">Show</a>
-      <%= link_to "Edit",edit_blog_path(b), class: 'btn btn-primary'%>
-    <a href="#" class="card-link">Delete</a></br>
-      <a><%= link_to "Create a New Article", new_blog_path, class: "new_article" %></a>
-    </div>
-  </div>
+        <% @blogs.each do |blog|%>
+        <div class="card" id="blog2" >
+          <div class="row">
+            <div class="col-md-4">
+              <section>
+        <a id="avatar"><%= link_to gravatar_for(blog.user, size: 50), blog.user %></br>
+          <a id="nameIndex"><%=blog.user.name  %></br>
+            <%=blog.user.email%>
+          </section>
+        </div>
+        <div class="col-md-8">
+        <div class="card-body">
+          <span class="name"><%= blog.title%></br></span>
+        <span class="body"><%= truncate(blog.body) %></br></span>
+        <span class="timestamp">
+          Posted <%= time_ago_in_words(blog.created_at) %> ago.</br>
+          <%= link_to blog_path(blog),class:'btn btn-primary' do%><%= fa_icon "circle"%> Show<%end%>
+        </span>
+      </div>
+      </div>
+      </div>
   <% end %>
   <% end %>
       <% else %>
@@ -46,4 +53,3 @@
         </div>
       </div>
   <% end %>
-

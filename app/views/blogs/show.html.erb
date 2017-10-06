@@ -1,18 +1,12 @@
-<div class="row mb-3">
+<div class="row">
   <div class="col-md-12">
-    <h1><%= @blog.user.name %></h1>
-    <div class="card">
-      <div class="card-header">
-        Title: <%= @blog.title %>
-      </div>
-      <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-muted"><%= @blog.user.name %></h6>
-        <div class="card-body"><%= @blog.body %></div>
-      </div>
+<div class="card">
+  <div class="card-header">
+    Blog
   </div>
-</div>
-  <div class="col-md-12">
-    <div class="card">
+    <%= render partial: "blog1",locals: {a: @blog}%>
+  </div>
+    <div class="card" id="commentShow">
       <div class="card-header">
         Comments
       </div>
@@ -24,5 +18,10 @@
       <% end %>
 
   </div>
+  <div class="button1">
+  <%= link_to blogs_path,class:'btn btn-primary' do%><%= fa_icon "circle"%>Back <%end%>
+  <a><%= link_to "Create a New Blog", new_blog_path, class: "new_article",class:'btn btn-primary' %></a>
+</div>
+
 </div>
 </div>

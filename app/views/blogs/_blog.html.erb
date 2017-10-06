@@ -1,12 +1,11 @@
-<li id="blog-<%= blog.id %>">
-  <%= link_to gravatar_for(blog.user, size: 50), blog.user %>
-  <span class="user"><%= link_to blog.user.name, blog.user %></span>
-  <span class="body"><%= blog.body %></span>
+  <div class="card-body" id="blog1">
+    <span class="name"><%= blog.title%></br></span>
+  <span class="body"><%= blog.body %></br></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(blog.created_at) %> ago.
-    <% if current_user?(blog.user) %>
-    <%= link_to "Edit", edit_blog_path %>
-    <%= link_to "Delete",blog, method: :delete,data: {confirm: "Are you sure?"}%>
-    <% end%>
+    Posted <%= time_ago_in_words(blog.created_at) %> ago.</br>
   </span>
-</li>
+  <%= link_to blogs_path,class:'btn btn-primary' do%><%= fa_icon "circle"%>Back <%end%>
+  <%=link_to edit_blog_path(blog),class:'btn btn-primary' do %><%= fa_icon "pencil"%>Edit <%end%>
+  <%=link_to blog_path(blog),class:'btn btn-primary', method: :delete,data: {confirm: "Are you sure?"} do%><%= fa_icon "eraser"%>Delete <%end%>
+
+</div>
