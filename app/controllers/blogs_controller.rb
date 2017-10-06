@@ -1,11 +1,13 @@
 class BlogsController < ApplicationController
   before_action :correct_user,   only: :destroy
+
   def index
     @blogs=Blog.all
   end
 
   def show
   @blog=Blog.find(params[:id])
+impressionist(@blog)
   end
 
   def new
@@ -51,4 +53,5 @@ def correct_user
  @blog = current_user.blogs.find_by(id: params[:id])
  redirect_to root_url if @blog.nil?
 end
+
 end

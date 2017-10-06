@@ -1,16 +1,17 @@
 <div class="row">
   <div class="col-md-4">
     <section>
-      <a id="avatar"><%= link_to gravatar_for(a.user, size: 50),a.user %>
+      <a id="avatar"><%= link_to gravatar_for(a.user, size: 50),a.user %></br>
+        <span class="view">View:<%= a.impressionist_count %></br></span>
+        <span class="timestamp">
+          Posted <%= time_ago_in_words(a.created_at) %> ago.</br>
+        </span>
     </section>
   </div>
     <div class="col-md-8">
   <div class="card-body" id="blog1">
     <span class="name"><%= a.title%></br></span>
   <span class="body"><%= a.body %></br></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(a.created_at) %> ago.</br>
-  </span>
 </div>
 </div>
 </div>
