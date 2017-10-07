@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'paintings/index'
-
-  resources :blogs
+  resources :blogs do
+    resources :comments
+  end
   resources :paintings
   resources :users
   resources :galleries

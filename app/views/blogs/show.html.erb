@@ -6,19 +6,10 @@
   </div>
     <%= render partial: "blog1",locals: {a: @blog}%>
   </div>
-    <div class="card" id="commentShow">
-      <div class="card-header">
-        Comments
-      </div>
-      <% @blog.comments.each do |comment | %>
-      <div class="card-body">
-        <h4 class="card-title"><%= comment.body %></h4>
-        <h6 class="card-subtitle mb-2 text-muted"><%comment.user.name %></h6>
+  <%= render 'comments/comment' %>
+    Comments
+      <div class="Showform"><%= render 'comments/form'%></div>
 
-      </div>
-      <% end %>
-
-  </div>
   <div class="button1">
   <%= link_to blogs_path,class:'btn btn-primary' do%><%= fa_icon "circle"%>Back <%end%>
   <a><%= link_to "Create a New Blog", new_blog_path, class: "new_article",class:'btn btn-primary' %></a>

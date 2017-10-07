@@ -7,7 +7,9 @@ class BlogsController < ApplicationController
 
   def show
   @blog=Blog.find(params[:id])
-impressionist(@blog)
+  @comments=Comment.where(blog: @blog).order("created_at DESC")
+  impressionist(@blog)
+end
   end
 
   def new
@@ -23,6 +25,9 @@ impressionist(@blog)
   else
     render 'new'
     end
+    if @comment.save
+    flash[:success]="Done!"
+    redirect_to blog_path(current_user.id)
   end
 
   def edit
