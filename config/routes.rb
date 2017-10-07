@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   resources :blogs do
     resources :comments
   end
-  resources :paintings
   resources :users
-  resources :galleries
+  resources :galleries do
+    resources :paintings
+  end
   get 'comments/index'
 
   get 'blogs/index'

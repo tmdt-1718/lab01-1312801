@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007082425) do
+ActiveRecord::Schema.define(version: 20171007152807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 20171007082425) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -76,10 +77,13 @@ ActiveRecord::Schema.define(version: 20171007082425) do
 
   create_table "paintings", force: :cascade do |t|
     t.string "name"
-    t.integer "gallery_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.bigint "gallery_id"
+    t.bigint "user_id"
+    t.index ["gallery_id"], name: "index_paintings_on_gallery_id"
+    t.index ["user_id"], name: "index_paintings_on_user_id"
   end
 
   create_table "user_blogs", force: :cascade do |t|
@@ -102,4 +106,7 @@ ActiveRecord::Schema.define(version: 20171007082425) do
   add_foreign_key "blogs", "users"
   add_foreign_key "comments", "blogs"
   add_foreign_key "comments", "users"
+  add_foreign_key "galleries", "users"
+  add_foreign_key "paintings", "galleries"
+  add_foreign_key "paintings", "users"
 end

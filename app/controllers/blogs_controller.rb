@@ -1,19 +1,16 @@
 class BlogsController < ApplicationController
-  before_action :correct_user,   only: :destroy
-
   def index
     @blogs=Blog.all
+  end
+
+  def new
+    @blog=Blog.new
   end
 
   def show
   @blog=Blog.find(params[:id])
   @comments=Comment.where(blog: @blog).order("created_at DESC")
   impressionist(@blog)
-end
-  end
-
-  def new
-    @blog=Blog.new
   end
 
   def create
@@ -25,10 +22,7 @@ end
   else
     render 'new'
     end
-    if @comment.save
-    flash[:success]="Done!"
-    redirect_to blog_path(current_user.id)
-  end
+end
 
   def edit
         @blog=Blog.find(params[:id])
@@ -50,13 +44,10 @@ end
     flash[:success]=" Blogs deleted!"
     redirect_to request.referrer
   end
+
 private
+
 def blog_params
   params.require(:blog).permit(:title, :body)
 end
-def correct_user
- @blog = current_user.blogs.find_by(id: params[:id])
- redirect_to root_url if @blog.nil?
-end
-
 end

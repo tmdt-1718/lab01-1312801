@@ -1,7 +1,13 @@
 <h1>Album</h1>
 <% @galleries.each do |gallery| %>
+  <div class="col-sm-4">
+<div class="card">
+    <div class="card-body">
 <li>
-<%= gallery.name %>
+<%= link_to "#{gallery.name}",gallery_path(gallery) %>
 </li>
+</div>
+</div>
+</div>
 <% end %>
-<%= link_to "Create painting",new_painting_path %>
+<%= link_to "Create Album",new_gallery_path%>

@@ -1,0 +1,12 @@
+  <%for painting in @gallery.paintings.each %>
+  <div class="col-sm-4">
+    <div class="painting">
+      <%= image_tag painting.image_url(:thumb).to_s %>
+      <div class="image_placeholder"></div>
+      <div class="name"><%= painting.name %></div>
+      <%= link_to "Add",new_gallery_path%> |
+      <%= link_to "Delete",@gallery,:confirm=>"Are you sure?",method: :delete%> |
+      <%= link_to "View Album",galleries_path%>
+    </div>
+  </div>
+  <% end %>

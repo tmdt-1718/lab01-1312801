@@ -1,4 +1,5 @@
 class PaintingsController < ApplicationController
+  before_action :find_album
   def index
     @paintings=Painting.all
   end
@@ -9,19 +10,18 @@ class PaintingsController < ApplicationController
     @painting=Painting.find(params[:id])
   end
   def create
-    #byebug
-    @painting=Painting.new(painting_params)
+    @painting =@gallery.paintings.create(params[:painting].permit(:body,:image,:remote_image_url))
+    @painting.user_id=current_user.id
     if @painting.save
   flash[:success]="Created image in album"
-  redirect_to painting_path(@painting)
+  redirect_to gallery_path(@gallery)
 else
   flash[:error]="Fail!"
   render 'new'
 end
   end
-
   private
-  def painting_params
-    params.require(:painting).permit(:name,:gallery_id, :image)
+  def find_album
+    @gallery=Gallery.find(params[:gallery_id])
   end
 end

@@ -1,5 +1,4 @@
 class GalleriesController < ApplicationController
-  before_action :correct_user,   only: :destroy
   def index
 @galleries=Gallery.all
   end
@@ -10,14 +9,16 @@ class GalleriesController < ApplicationController
 
   def show
 @gallery=Gallery.find(params[:id])
+@paintings=Painting.where(gallery: @gallery)
+  impressionist(@gallery)
   end
 
   def create
-@gallery=Gallery.create!(gallery_params)
+@gallery=Gallery.new(gallery_params)
 @gallery.user_id=current_user.id
 if @gallery.save
   flash[:success]="U created galleries successfully!!"
-redirect_to galleries_path
+redirect_to gallery_path(@gallery)
 else
   flash[:error]="Try again!!"
   render 'new'
@@ -26,10 +27,7 @@ end
 
   private
   def gallery_params
-      params.require(:gallery).permit(:name,:user_id)
+      params.require(:gallery).permit(:name)
     end
-    def correct_user
-     @gallery = current_user.galleries.find_by(id: params[:id])
-     redirect_to root_url if @gallery.nil?
-    end
+
 end

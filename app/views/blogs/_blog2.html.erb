@@ -1,0 +1,23 @@
+<% @blogs.each do |blog|%>
+<div class="card" id="blog2" >
+  <div class="row">
+    <div class="col-md-4">
+      <section>
+<a id="avatar"><%= link_to gravatar_for(blog.user, size: 50), blog.user %></br>
+  <a id="nameIndex"><%=blog.user.name  %></br>
+    <%=blog.user.email%>
+  </section>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+  <span class="name"><%= blog.title%></br></span>
+<span class="body"><%= truncate(blog.body) %></br></span>
+<span class="timestamp">
+  Posted <%= time_ago_in_words(blog.created_at) %> ago.</br>
+  <%= link_to blog_path(blog),class:'btn btn-primary' do%><%= fa_icon "circle"%> Show<%end%>
+</span>
+</div>
+</div>
+</div>
+</div>
+<% end %>
