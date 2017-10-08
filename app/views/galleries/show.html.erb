@@ -1,5 +1,13 @@
 <h1>Hello</h1>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+    <li class="breadcrumb-item"><a><%= link_to "Gallery",galleries_path%></a></li>
+    <li class="breadcrumb-item active">Painting</li>
+  </ol>
 <div class="row">
+  <div class="col-md-12">
     <%= render 'paintings/form' %>
+  </div>
     <%= render 'paintings/gallery' %>
+  </div>
 </div>

@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FastMail</title>
 
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= csrf_meta_tags %>
+<link>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" >
+          <%= link_to "FastMail", root_path, class: 'brand' %>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active" >
+          <%= link_to "Home", root_path, class: 'link-to-text-color' %>
+        </li>
+      <li class="nav-item">
+        <%= link_to "Album", galleries_path, class: 'link-to-text-color' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "BLog", blogs_path, class: 'link-to-text-color' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About", about_path, class: 'link-to-text-color' %>
+      </li>
+      <% if logged_in? %>
+      <li><%= link_to current_user[:name],current_user,class:'link-to-text-color'%></li>
+      <li class="nav-item">
+        <%= link_to "Logout", logout_path,method: :delete, class: 'link-to-text-color' %>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", login_path, class: 'link-to-text-color' %>
+      </li>
+      <% end %>
+
+        </ul>
+      </div>
+    </nav>
+        <!-- Header -->
+
+  
+            <%= yield %>
+        </div>
+      </div>
+</div>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/pages.js"></script>
+      </body>
+</html>

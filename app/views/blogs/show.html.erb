@@ -4,7 +4,11 @@
   <div class="card-header">
     Blog
   </div>
+  <%if @blog.user.name==current_user.name%>
+    <%= render partial: "blog3",locals: {a: @blog}%>
+    <%else%>
     <%= render partial: "blog1",locals: {a: @blog}%>
+    <%end%>
   </div>
   <%= render 'comments/comment' %>
     Comments

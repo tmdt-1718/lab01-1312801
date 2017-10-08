@@ -24,10 +24,13 @@ else
   render 'new'
   end
 end
+def edit
+  @gallery=Gallery.find(params[:id])
+end
 
   private
   def gallery_params
-      params.require(:gallery).permit(:name)
+      params.require(:gallery).permit(:name,:image)
     end
 
 end

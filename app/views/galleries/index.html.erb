@@ -1,11 +1,26 @@
 <h1>Album</h1>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/home">Home</a></li>
+  <li class="breadcrumb-item active">Album</li>
+</ol>
 <% @galleries.each do |gallery| %>
-  <div class="col-sm-4">
 <div class="card">
     <div class="card-body">
+<div class="row">
+  <div class="col-md-4">
+    <%if gallery.image_url.present? %>
+<%= image_tag gallery.image_url(:medium).to_s %>
+<% else %>
+<%= image_tag("No-image-found.jpg", :width => 300, :heigh =>300) %>
+<% end %>
+</div>
+  <div class="col-md-8">
 <li>
-<%= link_to "#{gallery.name}",gallery_path(gallery) %>
+<%= link_to "#{gallery.name}",gallery_path(gallery) %></br>
+   View:<%=gallery.impressionist_count  %></br>
+   Create by:<%=gallery.user.name%>
 </li>
+</div>
 </div>
 </div>
 </div>

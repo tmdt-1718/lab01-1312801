@@ -1,4 +1,8 @@
 <% provide(:title, @user.name) %>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/home">Home</a></li>
+  <li class="breadcrumb-item active"><%=current_user.name%></li>
+</ol>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
