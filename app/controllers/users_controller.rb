@@ -21,8 +21,7 @@ class UsersController < ApplicationController
   def destroy
     @blog.destroy
     flash[:success]=" Blogs deleted!"
-    redirect_to request.referrer || user_path(current_user.id)
-  end
+    redirect_back(fallback_location: root_path)
 end
 private
 

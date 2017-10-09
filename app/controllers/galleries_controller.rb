@@ -24,13 +24,21 @@ else
   render 'new'
   end
 end
+
 def edit
   @gallery=Gallery.find(params[:id])
 end
 
+def destroy
+  @gallery=Gallery.find(params[:id])
+   @gallery.destroy
+  flash[:success]=" Gallery deleted!"
+  redirect_back(fallback_location: root_path)
+end
+
   private
+
   def gallery_params
       params.require(:gallery).permit(:name,:image)
     end
-
 end

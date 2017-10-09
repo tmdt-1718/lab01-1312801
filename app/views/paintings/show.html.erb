@@ -1,2 +1,9 @@
-
-<%= image_tag @painting.image_url.to_s if @painting.image_url.present? %>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/home">Home</a></li>
+    <li class="breadcrumb-item"><a><%= link_to "Gallery",galleries_path%></a></li>
+    <li class="breadcrumb-item"><a><%= link_to "Painting",gallery_path(@gallery)%></a></li>
+  <li class="breadcrumb-item active"><%=@painting.id%></li>
+</ol>
+<%= image_tag @painting.image_url(:big).to_s %></br>
+User:<a><%=@painting.user.name %></a></br>
+View:<%= @painting.impressionist_count%>

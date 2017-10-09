@@ -1,4 +1,6 @@
 class Painting < ApplicationRecord
+  include Impressionist::IsImpressionable
+  is_impressionable
   def access_params
       params.require(:painting).permit(:name, :image, :remote_image_url)
     end
@@ -7,4 +9,5 @@ class Painting < ApplicationRecord
  belongs_to :user
  validates :user_id, presence: true
  mount_uploader :image, ImageUploader
+ has_many :impressionists
 end

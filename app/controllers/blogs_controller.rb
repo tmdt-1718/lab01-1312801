@@ -40,11 +40,11 @@ end
   end
 
   def destroy
-    @blog.destroy
+    @blog.destroy?
     flash[:success]=" Blogs deleted!"
-    redirect_to request.referrer
-  end
+    redirect_back(fallback_location: root_path)
 
+end
 private
 
 def blog_params
