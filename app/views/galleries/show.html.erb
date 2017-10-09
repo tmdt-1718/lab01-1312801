@@ -6,7 +6,12 @@
   </ol>
 <div class="row">
   <div class="col-md-12">
+    <%if current_user.name==@gallery.user.name%>
       <div><%= render 'paintings/gallery' %></div>
     <div><%= render 'paintings/form' %></div>
+    <%else%>
+    <div><%= render 'paintings/gallery1' %></div>
+  <div><%= render 'paintings/form' %></div>
+    <% end %>
   </div>
 </div>

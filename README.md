@@ -1,4 +1,4 @@
-# BT-TMDT-1 - *Name of your app*
+# BT-TMDT-1 - FastMail
 
 **Name of your app** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
@@ -50,7 +50,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 Link Youtube demo ứng dụng:
 
-https://www.youtube.com/watch?v=jq-nIwBHs18&feature=youtu.be
+https://youtu.be/jq-nIwBHs18
 
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 

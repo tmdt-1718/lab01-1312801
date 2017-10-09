@@ -22,9 +22,13 @@
    View:<%=gallery.impressionist_count  %></br>
    Create by:<%=gallery.user.name%></br>
      Posted <%= time_ago_in_words(gallery.created_at) %> ago.</br>
+     <%if current_user.name==gallery.user.name%>
   <%= link_to "Add",gallery_path(gallery)%> |
    <%= link_to "Delete",gallery,:confirm=>"Are you sure?",method: :delete%> |
    <%= link_to "View Album",galleries_path%>
+   <%else%>
+   <%= link_to "Show",gallery_path(gallery),class:'btn btn-primary'%>
+   <%end%>
 </li>
 </div>
 </div>

@@ -1,0 +1,14 @@
+<% @gallery.paintings.each do |painting| %>
+<div class="col-md-4">
+<div class="card" >
+  <div class="card-body">
+  <div class="painting">
+    <%if painting.present? %>
+    <%= image_tag painting.image_url(:thumb).to_s %>
+    <div class="name"><%= painting.name %></div>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
