@@ -15,10 +15,6 @@ margin-right: auto;
 #123  {
   font-size: 200%
 }
-/* collapsed sidebar styles */
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 
@@ -63,9 +59,7 @@ a, a:hover, a:focus {
     margin: 40px 0;
 }
 
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
+
 .wrapper {
     display: flex;
     align-items: stretch;
@@ -136,18 +130,14 @@ a[aria-expanded="true"]::before {
     color: #fff;
     background: #6d7fcc;
 }
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
+
 #content {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
 }
 
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -250px;
