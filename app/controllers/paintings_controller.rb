@@ -8,11 +8,11 @@ class PaintingsController < ApplicationController
     @painting=Painting.new
   end
   def show
-    @painting=Painting.find(params[:id])
+      @painting=@gallery.paintings.find(params[:id])
     impressionist(@painting)
   end
   def create
-    @painting =@gallery.paintings.create(params[:painting].permit(:body,:image,:remote_image_url))
+    @painting =@gallery.paintings.create(params[:painting].permit(:body,:image))
     @painting.user_id=current_user.id
     if @painting.save
   flash[:success]="Created image in album"

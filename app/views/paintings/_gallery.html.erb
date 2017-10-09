@@ -1,13 +1,15 @@
-  <%for painting in @gallery.paintings.each %>
+  <% @paintings.each do |painting| %>
   <div class="col-md-4">
 <div class="card" >
     <div class="card-body">
     <div class="painting">
+      <%if painting.present? %>
       <%= image_tag painting.image_url(:thumb).to_s %>
       <div class="name"><%= painting.name %></div>
       <%= link_to "Add",new_gallery_path%> |
       <%= link_to "Delete",[painting.gallery,painting],:confirm=>"Are you sure?",method: :delete%> |
       <%= link_to "View Picture",[painting.gallery,painting]%>
+      <% end %>
     </div>
   </div>
   </div>

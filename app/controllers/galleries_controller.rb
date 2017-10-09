@@ -9,7 +9,7 @@ class GalleriesController < ApplicationController
 
   def show
 @gallery=Gallery.find(params[:id])
-@paintings=Painting.where(gallery: @gallery)
+@paintings=Painting.where(gallery: @gallery).order("created_at DESC")
   impressionist(@gallery)
   end
 
@@ -18,7 +18,7 @@ class GalleriesController < ApplicationController
 @gallery.user_id=current_user.id
 if @gallery.save
   flash[:success]="U created galleries successfully!!"
-redirect_to gallery_path(@gallery)
+redirect_to galleries_path(@gallery)
 else
   flash[:error]="Try again!!"
   render 'new'

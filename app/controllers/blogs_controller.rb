@@ -18,7 +18,7 @@ class BlogsController < ApplicationController
     @blog.user_id=current_user.id
     if @blog.save
     flash[:success]="Done!"
-    redirect_to blog_path(current_user.id)
+    redirect_to blog_path(@blog)
   else
     render 'new'
     end
@@ -40,9 +40,10 @@ end
   end
 
   def destroy
-    @blog.destroy?
+    @blog=Blog.find(params[:id])
+    @blog.destroy
     flash[:success]=" Blogs deleted!"
-    redirect_back(fallback_location: root_path)
+    redirect_to blogs_path
 
 end
 private

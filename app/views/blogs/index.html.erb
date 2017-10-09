@@ -20,6 +20,7 @@
   <% end %>
       <% if current_user.blogs.count >0 %>
           <%= render partial: "blog2"%>
+            <a><%= link_to "Create a New Article", new_blog_path, class: "new_article" %></a>
   <% end %>
       <% else %>
 

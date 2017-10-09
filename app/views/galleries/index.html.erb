@@ -21,7 +21,8 @@
 <%= link_to "#{gallery.name}",gallery_path(gallery) %></br>
    View:<%=gallery.impressionist_count  %></br>
    Create by:<%=gallery.user.name%></br>
-  <%= link_to "Add",new_gallery_path%> |
+     Posted <%= time_ago_in_words(gallery.created_at) %> ago.</br>
+  <%= link_to "Add",gallery_path(gallery)%> |
    <%= link_to "Delete",gallery,:confirm=>"Are you sure?",method: :delete%> |
    <%= link_to "View Album",galleries_path%>
 </li>
